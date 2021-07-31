@@ -1622,11 +1622,18 @@ void CMainLog::SaveInfo(char cFileName[255], char *pData, DWORD dwStartSize)
 		//hFile = CreateFileA(cFileName, GENERIC_READ, NULL, NULL, OPEN_EXISTING, NULL, NULL);
 		//dwFileSize = GetFileSize(hFile, NULL);
 		//if (hFile != INVALID_HANDLE_VALUE) CloseHandle(hFile);
+	try {
 		pFile = fopen(cFileName, "wt");
-		if(pFile != NULL)
-			if(sizeof(pData) > 0)
+		if (pFile != NULL)
+			if (sizeof(pData) > 0)
 				fwrite(pData, dwStartSize, strlen(pData), pFile);
 		if (pFile != NULL) fclose(pFile);
+	}
+	catch (std::exception const& e) {
+		wsprintf(G_cTxt, "(!CRITICAL) Crash error in SaveInfo #1 (%s)", e.what());
+		PutLogList(G_cTxt);
+	}
+
 }
 int CMainLog::GetAccountInfo(int iClientH, char cAccountName[11], char cAccountPass[11], char cWorldName[30], int * iAccount, char cMode)
 {
