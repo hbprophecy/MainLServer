@@ -1,0 +1,95 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MainServer - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\MARLEY~1\AppData\Local\Temp\RSPA04C.tmp" with contents
+[
+/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/MainServer.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\helbreath\Source(Main)\MainServer(007)\MainLog.cpp"
+]
+Creating command line "cl.exe @C:\Users\MARLEY~1\AppData\Local\Temp\RSPA04C.tmp" 
+Creating temporary file "C:\Users\MARLEY~1\AppData\Local\Temp\RSPA04D.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib WSOCK32.lib WS2_32.lib WINMM.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/MainServer.pdb" /machine:I386 /out:"Release/MainServer.exe" 
+".\Release\Account.obj"
+".\Release\Client.obj"
+".\Release\Game.obj"
+".\Release\MainLog.obj"
+".\Release\Map.obj"
+".\Release\md5.obj"
+".\Release\md5wrapper.obj"
+".\Release\Msg.obj"
+".\Release\source.obj"
+".\Release\StrTok.obj"
+".\Release\XSocket.obj"
+]
+Creating command line "link.exe @C:\Users\MARLEY~1\AppData\Local\Temp\RSPA04D.tmp"
+<h3>Output Window</h3>
+Compiling...
+MainLog.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+MainServer.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: MainServer - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\MARLEY~1\AppData\Local\Temp\RSPAEF4.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/MainServer.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\helbreath\Source(Main)\MainServer(007)\Account.cpp"
+"D:\helbreath\Source(Main)\MainServer(007)\Client.cpp"
+"D:\helbreath\Source(Main)\MainServer(007)\Game.cpp"
+"D:\helbreath\Source(Main)\MainServer(007)\MainLog.cpp"
+"D:\helbreath\Source(Main)\MainServer(007)\Map.cpp"
+"D:\helbreath\Source(Main)\MainServer(007)\md5.cpp"
+"D:\helbreath\Source(Main)\MainServer(007)\md5wrapper.cpp"
+"D:\helbreath\Source(Main)\MainServer(007)\source.cpp"
+"D:\helbreath\Source(Main)\MainServer(007)\StrTok.cpp"
+"D:\helbreath\Source(Main)\MainServer(007)\XSocket.cpp"
+]
+Creating command line "cl.exe @C:\Users\MARLEY~1\AppData\Local\Temp\RSPAEF4.tmp" 
+Creating temporary file "C:\Users\MARLEY~1\AppData\Local\Temp\RSPAEF5.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib WSOCK32.lib WS2_32.lib WINMM.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/MainServer.pdb" /debug /machine:I386 /out:"Debug/MainServer.exe" /pdbtype:sept 
+".\Debug\Account.obj"
+".\Debug\Client.obj"
+".\Debug\Game.obj"
+".\Debug\MainLog.obj"
+".\Debug\Map.obj"
+".\Debug\md5.obj"
+".\Debug\md5wrapper.obj"
+".\Debug\Msg.obj"
+".\Debug\source.obj"
+".\Debug\StrTok.obj"
+".\Debug\XSocket.obj"
+]
+Creating command line "link.exe @C:\Users\MARLEY~1\AppData\Local\Temp\RSPAEF5.tmp"
+<h3>Output Window</h3>
+Compiling...
+Account.cpp
+Client.cpp
+Game.cpp
+MainLog.cpp
+Map.cpp
+md5.cpp
+md5wrapper.cpp
+source.cpp
+StrTok.cpp
+XSocket.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+MainServer.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
