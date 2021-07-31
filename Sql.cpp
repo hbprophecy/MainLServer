@@ -70,10 +70,17 @@ bool CSql::GetAccountInfo(int iClientH) {
 		return false;
 	}
 	if ((row = mysql_fetch_row(res)) != NULL) {
-		memcpy(G_pMainLog->m_pAccountList[iClientH]->cEmail, row[1], strlen(row[1])); //Email
-		G_pMainLog->m_pAccountList[iClientH]->iAccountid = atoi(row[2]); //ID
-		G_pMainLog->m_pAccountList[iClientH]->iCredit = atoi(row[4]); //Credit
-		if(atoi(row[5]) <= 1) G_pMainLog->m_pAccountList[iClientH]->bEmailConfirm = atoi(row[5]); //Email Active?
+		try {
+			memcpy(G_pMainLog->m_pAccountList[iClientH]->cEmail, row[1], strlen(row[1])); //Email
+			G_pMainLog->m_pAccountList[iClientH]->iAccountid = atoi(row[2]); //ID
+			G_pMainLog->m_pAccountList[iClientH]->iCredit = atoi(row[4]); //Credit
+			if (atoi(row[5]) <= 1) G_pMainLog->m_pAccountList[iClientH]->bEmailConfirm = atoi(row[5]); //Email Active?
+		}
+		catch (std::exception const& e) {
+			wsprintf(cTemp, "(!CRITICAL) GetAccountInfo (SQL) Read rows to memory #1 (%s)", e.what());
+			PutLogList(cTemp);
+		}
+
 	}
 	mysql_close(conn);
 	return true;

@@ -707,15 +707,23 @@ void CMainLog::RequestLogin(int iClientH, char *pData)
  iAccount = -1;
 
 		if(m_pClientList[iClientH] == NULL) return;
+		//if trouble transfer tcp back to data.
+		try {
+			cp = (char*)(pData + DEF_INDEX2_MSGTYPE + 2);
 
-	   cp = (char *)(pData + DEF_INDEX2_MSGTYPE + 2);
+			memcpy(cAccountName, cp, 10);
+			cp += 10;
+			memcpy(cAccountPass, cp, 10);
+			cp += 10;
+			memcpy(cWorldName, cp, 30);
+			cp += 30;
 
-		memcpy(cAccountName, cp, 10);
-		cp += 10;
-		memcpy(cAccountPass, cp, 10);
-		cp += 10;
-		memcpy(cWorldName, cp, 30);
-		cp += 30;
+		}
+		catch (std::exception const& e) {
+			wsprintf(G_cTxt, "(!CRITICAL) Crash error in RequestLogin #1 (%s)", e.what());
+			PutLogList(G_cTxt);
+		}
+
 
 		iMessage = GetAccountInfo(iClientH, cAccountName, cAccountPass, cWorldName, &iAccount);
 		if(m_pAccountList[iAccount] == NULL) iMessage = 1;
